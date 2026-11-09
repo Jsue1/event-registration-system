@@ -1,0 +1,82 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #172033;
+  background: #f4f6fb;
+}
+body { margin: 0; }
+.topbar {
+  height: 68px; padding: 0 max(5vw, 20px); display: flex;
+  align-items: center; justify-content: space-between; background: #fff;
+  border-bottom: 1px solid #e8ebf2;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 750; }
+.brand-icon {
+  display: grid; place-items: center; width: 34px; height: 34px;
+  border-radius: 10px; color: white; background: #3659d9;
+}
+.top-note { color: #778096; font-size: 13px; }
+.page { width: min(1080px, 92%); margin: 36px auto; }
+.hero {
+  padding: 30px; border-radius: 18px; color: white;
+  background: linear-gradient(120deg, #263f9f, #5476ec);
+}
+.eyebrow { margin: 0 0 8px; color: #8296f5; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+.hero .eyebrow { color: #cbd5ff; }
+h1 { margin: 0; font-size: clamp(27px, 4vw, 38px); }
+.subtitle { max-width: 570px; color: #e0e7ff; line-height: 1.6; }
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 18px 0; }
+.stat-card, .panel {
+  background: white; border: 1px solid #e9edf5; border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(25, 42, 85, .035);
+}
+.stat-card { padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; }
+.stat-card span { color: #778096; font-size: 14px; }
+.stat-card strong { font-size: 26px; color: #294bc3; }
+.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.panel { padding: 23px; }
+.panel-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+h2 { margin: 0; font-size: 20px; }
+label { display: block; margin: 13px 0 6px; font-size: 13px; font-weight: 700; color: #424d63; }
+input, textarea, select {
+  width: 100%; padding: 11px 12px; border: 1px solid #dce2ed;
+  border-radius: 8px; font: inherit; font-size: 14px; color: #172033; background: #fff;
+}
+input:focus, textarea:focus, select:focus { outline: 2px solid #dce4ff; border-color: #7188ed; }
+textarea { resize: vertical; }
+.two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.button {
+  border: 0; border-radius: 8px; padding: 11px 15px; font-weight: 700;
+  cursor: pointer; font-size: 13px;
+}
+.primary { width: 100%; margin-top: 17px; background: #3659d9; color: white; }
+.primary:hover { background: #2948bd; }
+.secondary { color: #3659d9; background: #eef1ff; }
+.event-panel { margin-top: 18px; }
+.list-heading { margin-bottom: 8px; }
+.events-list { display: grid; gap: 12px; }
+.event-card { border: 1px solid #e8ecf4; border-radius: 10px; padding: 16px; }
+.event-card-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.event-card h3 { margin: 0 0 8px; font-size: 17px; }
+.event-meta { display: flex; flex-wrap: wrap; gap: 12px; color: #737e92; font-size: 12px; }
+.event-description { color: #59657a; font-size: 13px; line-height: 1.5; }
+.event-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.small-button { border: 0; border-radius: 7px; padding: 8px 10px; cursor: pointer; font-weight: 650; font-size: 12px; }
+.view-button { color: #294bc3; background: #eef1ff; }
+.delete-button { color: #b42318; background: #fff0ef; }
+.notice { min-height: 20px; color: #245b38; font-size: 13px; }
+.empty { color: #818ba0; font-size: 14px; text-align: center; padding: 18px; }
+.registration-list { margin: 12px 0 0; padding: 12px; background: #f7f8fc; border-radius: 8px; }
+.registration-row { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid #e8ebf2; font-size: 12px; }
+.registration-row:last-child { border-bottom: 0; }
+footer { text-align: center; color: #929bad; font-size: 12px; padding: 28px 0; }
+@media (max-width: 720px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .panel { padding: 18px; }
+  .top-note { display: none; }
+}
+@media (max-width: 430px) {
+  .stats { grid-template-columns: 1fr; }
+  .two-columns { grid-template-columns: 1fr; }
+}

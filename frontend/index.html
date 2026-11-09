@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">E</span> Event Registration</div>
+    <span class="top-note">Simple event management</span>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">EVENT MANAGEMENT</p>
+        <h1>Plan events. Register people.</h1>
+        <p class="subtitle">Create events and manage participant registrations in one simple place.</p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card"><span>Total events</span><strong id="event-total">0</strong></article>
+      <article class="stat-card"><span>Registrations</span><strong id="registration-total">0</strong></article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">GET STARTED</p><h2>Create an event</h2></div>
+        </div>
+        <form id="event-form">
+          <label for="event-title">Event name</label>
+          <input id="event-title" required maxlength="100" placeholder="e.g. Technology Workshop">
+          <div class="two-columns">
+            <div>
+              <label for="event-date">Event date</label>
+              <input id="event-date" type="date" required>
+            </div>
+            <div>
+              <label for="event-location">Location</label>
+              <input id="event-location" required placeholder="e.g. Kigali">
+            </div>
+          </div>
+          <label for="event-description">Description (optional)</label>
+          <textarea id="event-description" rows="3" placeholder="What is this event about?"></textarea>
+          <button class="button primary" type="submit">Create event</button>
+        </form>
+      </article>
+
+      <article class="panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">PARTICIPANTS</p><h2>Register for an event</h2></div>
+        </div>
+        <form id="registration-form">
+          <label for="selected-event">Choose event</label>
+          <select id="selected-event" required><option value="">Create an event first</option></select>
+          <label for="participant-name">Participant name</label>
+          <input id="participant-name" required placeholder="Enter full name">
+          <label for="participant-email">Email address</label>
+          <input id="participant-email" type="email" required placeholder="name@example.com">
+          <button class="button primary" type="submit">Register participant</button>
+        </form>
+      </article>
+    </section>
+
+    <section class="panel event-panel">
+      <div class="panel-heading list-heading">
+        <div><p class="eyebrow">OVERVIEW</p><h2>Available events</h2></div>
+        <button class="button secondary" id="refresh-button" type="button">Refresh</button>
+      </div>
+      <p id="notice" class="notice" role="status"></p>
+      <div id="events-list" class="events-list">
+        <p class="empty">Loading events...</p>
+      </div>
+    </section>
+
+    <footer>Event Registration System · Frontend + Flask API + Docker</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
